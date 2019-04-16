@@ -66,9 +66,7 @@ public class CommentController extends BaseController {
 
         commentService.post(c);
 
-        if (toId != profile.getId()) {
-            sendMessage(profile.getId(), toId, pid);
-        }
+        sendMessage(profile.getId(), toId, pid);
 
         return Result.successMessage("发表成功");
     }
@@ -97,6 +95,7 @@ public class CommentController extends BaseController {
 
         if (pid > 0) {
             event.setEvent(Consts.MESSAGE_EVENT_COMMENT_REPLY);
+            event.setCommentParentId(pid);
         } else {
             event.setEvent(Consts.MESSAGE_EVENT_COMMENT);
         }
