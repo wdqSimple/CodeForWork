@@ -98,7 +98,7 @@ public class PostController extends BaseController {
 		}
 		return "redirect:/admin/post/list";
 	}
-
+     //推荐文章
 	@RequestMapping("/featured")
 	@ResponseBody
 	public Result featured(Long id, HttpServletRequest request) {

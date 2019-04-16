@@ -58,9 +58,7 @@ public class ChannelController extends BaseController {
 	@RequestMapping("/post/{id:\\d*}")
 	public String view(@PathVariable Long id, ModelMap model) {
 		PostVO view = postService.get(id);
-
 		Assert.notNull(view, "该文章已被删除");
-
 		if ("markdown".endsWith(view.getEditor())) {
 			PostVO post = new PostVO();
 			BeanUtils.copyProperties(view, post);

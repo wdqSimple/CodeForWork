@@ -72,7 +72,6 @@ public class PostSearchServiceImpl implements PostSearchService {
         List<Post> list = query.getResultList();
         List<PostVO> rets = list.stream().map(po -> {
             PostVO post = BeanMapUtils.copy(po);
-
             try {
                 // 处理高亮
                 String title = highlighter.getBestFragment(analyzer, "title", post.getTitle());

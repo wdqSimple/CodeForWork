@@ -59,7 +59,6 @@ public class RoleController extends BaseController {
 
 		HashSet<Permission> permissions = new HashSet<>();
 		if(perms != null && perms.size() > 0){
-
             for(Long pid: perms){
                 Permission p = new Permission();
                 p.setId(pid);
@@ -73,7 +72,7 @@ public class RoleController extends BaseController {
             roleService.update(role, permissions);
             data = Result.success();
         }
-        model.put("data", data);
+         model.put("data", data);
         return "redirect:/admin/role/list";
 	}
 	

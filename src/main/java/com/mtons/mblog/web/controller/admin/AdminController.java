@@ -44,7 +44,7 @@ public class AdminController {
         model.put("userCount", userService.count());
 		return "/admin/index";
 	}
-	
+
 	private void pushSystemStatus(HttpServletRequest request, ModelMap model) {
         float freeMemory = (float) Runtime.getRuntime().freeMemory();
         float totalMemory = (float) Runtime.getRuntime().totalMemory();

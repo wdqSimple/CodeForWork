@@ -62,7 +62,6 @@ public class CommentController extends BaseController {
         c.setPostId(toId);
         c.setContent(HtmlUtils.htmlEscape(text));
         c.setAuthorId(profile.getId());
-
         c.setPid(pid);
 
         commentService.post(c);

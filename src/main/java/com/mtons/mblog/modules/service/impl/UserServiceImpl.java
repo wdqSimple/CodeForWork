@@ -139,14 +139,11 @@ public class UserServiceImpl implements UserService {
         if (StringUtils.isBlank(po.getName())) {
             po.setName(user.getUsername());
         }
-
         Date now = Calendar.getInstance().getTime();
         po.setPassword(MD5.md5(user.getPassword()));
         po.setStatus(EntityStatus.ENABLED);
         po.setCreated(now);
-
         userRepository.save(po);
-
         return BeanMapUtils.copy(po);
     }
 

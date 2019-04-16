@@ -61,7 +61,7 @@ public class EmailController extends BaseController {
         Map<String, Object> context = new HashMap<>();
         context.put("code", code);
 
-        String title = MessageFormat.format(EMAIL_TITLE, siteOptions.getValue("site_name"));
+        String title = MessageFormat.format(EMAIL_TITLE, siteOptions.getValue("邮箱验证信息"));
         mailService.sendTemplateEmail(email, title, Consts.EMAIL_TEMPLATE_CODE, context);
         return Result.successMessage("邮件发送成功");
     }

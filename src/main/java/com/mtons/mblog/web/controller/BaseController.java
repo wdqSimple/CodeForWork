@@ -132,12 +132,16 @@ public class BaseController {
         } catch (UnknownAccountException e) {
             log.error(e.getMessage());
             ret = Result.failure("用户不存在");
+            return ret;
         } catch (LockedAccountException e) {
             log.error(e.getMessage());
             ret = Result.failure("用户被禁用");
+            return ret;
         } catch (AuthenticationException e) {
             log.error(e.getMessage());
+            //测试
             ret = Result.failure("用户认证失败");
+            return ret;
         }
         return ret;
     }

@@ -32,9 +32,15 @@ public class MailServiceImpl implements MailService {
 
     @Override
     public void config() {
-        String mailHost = siteOptions.getValue("mail_smtp_host");
-        String mailUsername = siteOptions.getValue("mail_smtp_username");
-        String mailPassowrd = siteOptions.getValue("mail_smtp_password");
+
+        //配置的验证码:  qmayecvrprulbcfh
+//        String mailHost = "smtp.qq.com";
+//        String mailUsername = "764569359@qq.com";
+//        String mailPassowrd = "qmayecvrprulbcfh";
+
+        String mailHost = siteOptions.getValue("smtp.qq.com");
+        String mailUsername = siteOptions.getValue("764569359@qq.com");
+        String mailPassowrd = siteOptions.getValue("qmayecvrprulbcfh");
 
         if (StringUtils.isNoneBlank(mailHost, mailUsername, mailPassowrd)) {
             final Properties properties = OhMyEmail.defaultConfig(false);

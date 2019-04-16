@@ -36,6 +36,7 @@ import java.util.Set;
 @Controller("adminUserController")
 @RequestMapping("/admin/user")
 public class UserController extends BaseController {
+
 	@Autowired
 	private UserService userService;
 
